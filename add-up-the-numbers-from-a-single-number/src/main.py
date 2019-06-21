@@ -15,7 +15,7 @@ def add_up(n):
     n = int(num)
     for i in range(0, n + 1):
         total += i
-    print(total)
+    return total
 
 
 
@@ -27,5 +27,5 @@ while not done:
         if(num.capitalize() == "Quit"):
             done = True
 
-    add_up(num)
-
+    else:
+        print(add_up(num))
