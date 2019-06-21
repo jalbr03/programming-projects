@@ -12,6 +12,7 @@ def is_number(n):
         return False
 
 while not done:
+    total = 0
     num = input("type a number or type quit to end the program ")
 
     if(is_number(num) == False):
