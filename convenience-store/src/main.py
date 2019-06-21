@@ -15,18 +15,22 @@ pennies = input("how many pennies do you have ")   #|
 #declar output
 output = []
 
-#check if the user put all of the numbers in properly
-try:
-    #turn all of the vars in to a list
-    totalchange = [int(quarters)*0.25, int(dimes)*0.10, int(nickels)*0.05, int(pennies)*0.01]
-#except the Error and set code run to false
-except ValueError:
-    print("Error: Fill in all of the lines with numbers.")
-    exit()
+#turn all of the vars in to a list
+totalchange = [int(quarters), int(dimes), int(nickels), int(pennies)]
+
 
 #if the user put all of the numbers in correctly code and the code will run
 def change_enough(change, item):
     totalmoney = 0
+
+    # check if the user put all of the numbers in properly
+    try:
+        change = [totalchange[0]*0.25, totalchange[1]*0.10, totalchange[2]*0.05, totalchange[3]*0.01,]
+    # except the Error and quit
+    except ValueError:
+        print("Error: Fill in all of the lines with numbers.")
+        exit()
+
     for i in range(0,4):
         #add all of the numbers in the list to the variable totalmoney
         totalmoney += change[i]
@@ -41,6 +45,7 @@ def change_enough(change, item):
         return True
     else:
         return False
+
 #print true or false
 print(change_enough(totalchange, WhatIsTheItem))
 
